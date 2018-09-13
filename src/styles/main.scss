@@ -1,11 +1,66 @@
 @import 'sass/base/_normalize.scss';
 @import 'sass/helpers/_mixins.scss';
 @import 'sass/helpers/_variables.scss';
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url('../assets/fonts/Poppins/Poppins-Medium.ttf') format('ttf');
+}
 
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+} 
 body {
     @include width-height(100%);
+    font-size: $font-size_1;
 }
 
 .wrapper {
     @include width-height(100%);
+}
+
+.header {
+    @include width-height(100%);
+    @include display-flex(row, wrap, center, center, center);
+    @include changeBackground($color_1, $color_4);
+    padding: 2em 0 1em;
+    background-color: $color_1;
+    &__logo-container {
+        @include width-height(100%);
+        @include display-flex(row, nowrap, center, center);
+    }
+    &__nav {
+        @include width-height(100%);
+        @include display-flex(column, wrap, center, center);        
+    }
+    &__nav-ul {
+        @include display-flex(row, wrap, center, center, center); 
+        list-style: none;
+        padding-left: 0;
+    }
+    &__nav-li {
+        margin: 0.5em;
+        border-radius: 2em;
+    }
+    &__nav-link {
+        text-decoration: none;
+        color: $color_3;
+        font: 0.85em medium 'Poppins-Medium';
+        margin: 0.5em;
+    }
+    @media #{$media-type_1} and (min-width: $screen-lg) {
+        @include display-flex(row, nowrap, center, center, center);
+        &__logo-container {
+            @include width-height(30%);
+            @include display-flex(row, nowrap, flex-end, center, center);
+        }
+        &__nav {
+            @include width-height(70%);      
+        }
+        &__nav-link {
+            margin: 0;
+        }
+    }
 }

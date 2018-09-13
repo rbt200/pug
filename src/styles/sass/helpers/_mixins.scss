@@ -24,4 +24,31 @@
       content: "";
       clear: both;
     }
-  }
+}
+
+@mixin changeBackground($c1, $c4) {
+    @keyframes mouse-in {
+        0%   {background-color: $c1;}
+        100%  {background-color: $c4;}        
+    }
+    // @keyframes mouse-out {
+    //     100%   {background-color: $color_1;}
+    //     0%  {background-color: $color_4;}   
+    // }
+    &__nav-li:hover {
+        cursor: pointer;
+        animation-name: mouse-in;
+        animation-duration: 1s;
+        background-color: $c4;
+        
+    }
+    // &__nav-link:hover:after {
+    //     animation-name: mouse-in;
+    //     animation-duration: 0.5s;
+    // }
+    // // pressed
+    // &__nav-link:active {
+    //     color: $color_0;
+    //     // display: none;
+    // }
+}

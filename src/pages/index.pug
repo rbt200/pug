@@ -1,8 +1,34 @@
 html
-    head
-        meta(charset="utf-8")
-        title= "Clock"
-        link(rel="stylesheet",href="./styles/style.css")
+    head(lang="en")
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        link(rel="stylesheet", href="./styles/style.css")
+        title="Alexis"
     body
-    
-
+        div.wrapper
+            header.header
+                div.header__logo-container
+                    img.header__logo(src="./assets/img/img-header-logo.png")
+                nav.header__nav
+                    ul.header__nav-ul
+                        li.header__nav-li
+                            a.header__nav-link(href="#about", title="About Us") About Us
+                        li.header__nav-li
+                            a.header__nav-link(href="#about", title="About Us") Our Focus
+                        li.header__nav-li
+                            a.header__nav-link(href="#about", title="About Us") Portfolio
+                        li.header__nav-li
+                            a.header__nav-link(href="#about", title="About Us") Our Team
+                        li.header__nav-li
+                            a.header__nav-link(href="#about", title="About Us") Work Space
+                        li.header__nav-li
+                            a.header__nav-link(href="#about", title="About Us") Pricing
+                        li.header__nav-li
+                            a.header__nav-link(href="#about", title="About Us") Testimonials
+                        li.header__nav-li
+                            a.header__nav-link(href="#about", title="About Us") Blog
+                        li.header__nav-li
+                            a.header__nav-link(href="#about", title="About Us") Contact  
+        
+        script(src="./scripts/script.js" type="text/javascript")
