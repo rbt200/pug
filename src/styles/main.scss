@@ -2,10 +2,14 @@
 @import 'sass/helpers/_mixins.scss';
 @import 'sass/helpers/_variables.scss';
 @font-face {
-    font-family: 'Poppins-Medium';
-    src: url('../assets/fonts/Poppins/Poppins-Medium.ttf') format('ttf');
+    font-family: 'LibreBaskerville-Regular';
+    src: url('../assets/fonts/LibreBaskerville/LibreBaskerville-Regular.ttf') format('truetype');
 }
-
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url('../assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+}
+// @include font-face('Poppins-Medium','../assets/fonts/Poppins/Poppins-Medium.ttf');
 html {
     box-sizing: border-box;
 }
@@ -47,7 +51,7 @@ body {
     &__nav-link {
         text-decoration: none;
         color: $color_3;
-        font: 0.85em medium 'Poppins-Medium';
+        font: 0.85em medium Poppins-Medium;
         margin: 0.5em;
     }
     @media #{$media-type_1} and (min-width: $screen-lg) {
@@ -61,6 +65,81 @@ body {
         }
         &__nav-link {
             margin: 0;
+        }
+    }
+}
+// ADVERT
+.advert {
+    @include width-height(100%);
+    @include display-flex(column, wrap, center, center, center);
+    @include animateButton($color_4, $color_4, 1s);
+    padding-bottom: 2em;
+    background-color: $color_5;
+    &__header {
+        @include width-height(100%);
+        @include display-flex(column, nowrap, center, center, center);
+        text-align: center;
+        margin-bottom: 2em;
+    }
+    &__title {
+        font: 2.25em normal LibreBaskerville-Regular;
+        color: $color_1;
+    }
+    &__body {
+        @include width-height(100%);
+        @include display-flex(column, nowrap, center, center, center);
+    }
+    &__content {
+        @include width-height(80%);
+        @include display-flex(column, nowrap, center, center, center);
+    }
+    &__content_color_green {
+       color: $color_6;
+    }
+    &__content_color_violet {
+        color: $color_7;
+    }
+     &__content_color_orange {
+       color: $color_8;
+    }
+    &__button {
+        background-color: $color_4;
+        border: none;
+        border-radius: 10em;
+        padding: 0.5em 1em;
+        outline: none;
+        color: $color_1;
+        font: 600 1em Poppins-SemiBold;
+    }
+    @media #{$media-type_1} and (min-width: $screen-sm) {
+        &__title-container {
+            @include width-height(60%);
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-md) {
+        &__body {
+            @include width-height(87%);
+            @include display-flex(row, nowrap, center, center, center);
+            margin-top: 2em;
+        }
+        &__title-container {
+            @include width-height(50%);
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-lg) {
+        &__body {
+            @include width-height(68%);
+        }
+        &__title-container {
+            @include width-height(40%);
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-xl) {
+        &__body {
+            @include width-height(55%);
+        }
+        &__title-container {
+            @include width-height(26%);
         }
     }
 }

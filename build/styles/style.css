@@ -302,8 +302,12 @@ template {
   display: none; }
 
 @font-face {
+  font-family: 'LibreBaskerville-Regular';
+  src: url("../assets/fonts/LibreBaskerville/LibreBaskerville-Regular.ttf") format("truetype"); }
+
+@font-face {
   font-family: 'Poppins-Medium';
-  src: url("../assets/fonts/Poppins/Poppins-Medium.ttf") format("ttf"); }
+  src: url("../assets/fonts/Poppins/Poppins-Medium.ttf") format("truetype"); }
 
 html {
   box-sizing: border-box; }
@@ -371,7 +375,7 @@ body {
   .header__nav-link {
     text-decoration: none;
     color: #272727;
-    font: 0.85em medium 'Poppins-Medium';
+    font: 0.85em medium Poppins-Medium;
     margin: 0.5em; }
   @media screen and (min-width: 992px) {
     .header {
@@ -393,3 +397,103 @@ body {
         height: inherit; }
       .header__nav-link {
         margin: 0; } }
+
+.advert {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-bottom: 2em;
+  background-color: #3f4049; }
+
+@keyframes button {
+  0% {
+    background-color: #d82203; }
+  100% {
+    background-color: #fc5f45; } }
+  .advert__button_animated_true:hover {
+    cursor: pointer;
+    animation-name: button;
+    animation-duration: 1s;
+    background-color: #fc5f45;
+    box-shadow: 1px 1px 2px #fc5f45, 0 0 25px #fc5f45, 0 0 5px #fc5f45; }
+  .advert__button_animated_true:active {
+    background-color: #fd7a64;
+    color: #fff; }
+  .advert__header {
+    width: 100%;
+    height: inherit;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin-bottom: 2em; }
+  .advert__title {
+    font: 2.25em normal LibreBaskerville-Regular;
+    color: #fff; }
+  .advert__body {
+    width: 100%;
+    height: inherit;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center; }
+  .advert__content {
+    width: 80%;
+    height: inherit;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center; }
+  .advert__content_color_green {
+    color: #3aa983; }
+  .advert__content_color_violet {
+    color: #b27cf5; }
+  .advert__content_color_orange {
+    color: #feb960; }
+  .advert__button {
+    background-color: #fc5f45;
+    border: none;
+    border-radius: 10em;
+    padding: 0.5em 1em;
+    outline: none;
+    color: #fff;
+    font: 600 1em Poppins-SemiBold; }
+  @media screen and (min-width: 576px) {
+    .advert__title-container {
+      width: 60%;
+      height: inherit; } }
+  @media screen and (min-width: 768px) {
+    .advert__body {
+      width: 87%;
+      height: inherit;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      margin-top: 2em; }
+    .advert__title-container {
+      width: 50%;
+      height: inherit; } }
+  @media screen and (min-width: 992px) {
+    .advert__body {
+      width: 68%;
+      height: inherit; }
+    .advert__title-container {
+      width: 40%;
+      height: inherit; } }
+  @media screen and (min-width: 1200px) {
+    .advert__body {
+      width: 55%;
+      height: inherit; }
+    .advert__title-container {
+      width: 26%;
+      height: inherit; } }

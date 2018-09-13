@@ -52,3 +52,29 @@
     //     // display: none;
     // }
 }
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+    @font-face {
+        font-family: $font-family;
+        font-weight: $weight;
+        font-style: $style;
+        src: url('#{$file-path}.eot');
+        src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype');
+    }
+}
+@mixin animateButton($bg1, $bg2, $time:1s) {
+    @keyframes button {
+        0%   {background-color: darken($bg1, 20%);}
+        100%  {background-color: $bg2;}        
+    }
+    &__button_animated_true:hover {
+        cursor: pointer;
+        animation-name: button;
+        animation-duration: $time;
+        background-color: $bg2;
+        box-shadow:1px 1px 2px $bg2, 0 0 25px $bg2, 0 0 5px $bg2;
+    }
+    &__button_animated_true:active {
+        background-color: lighten($bg2, 6.25%);
+        color: $color_1;
+    }
+}
