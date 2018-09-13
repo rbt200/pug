@@ -13,7 +13,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('pug', function () {
-    return gulp.src('./src/pages/**/*.pug')
+    gulp.src('./src/pages/*.pug')
         .pipe(pug())
         .pipe(concat('index.html'))
         .pipe(gulp.dest('./build'));
@@ -73,9 +73,9 @@ gulp.task('watch', ['sass', 'pug', 'autoprefixer', 'html', 'image', 'browserSync
     gulp.watch('./src/**/*.scss', ['sass']);
     gulp.watch('.src/**/*.scss', ['autoprefixer']);
     gulp.watch('./src/img/*', ['image']);
-    gulp.watch('./src/**/*.html', ['html']);
-    gulp.watch('./src/pages/**/*.pug', ['pug']);
-    gulp.watch('build/*.html', browserSync.reload);
+    // gulp.watch('./src/**/*.html', ['html']);
+    gulp.watch('./src/**/*.pug', ['pug']);
+    gulp.watch('./build/*.html', browserSync.reload);
     gulp.watch("./build/**/*.css").on("change", browserSync.reload);
     gulp.watch('./build/**/*.js').on("change", browserSync.reload);
 });
