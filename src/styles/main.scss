@@ -2,12 +2,20 @@
 @import 'sass/helpers/_mixins.scss';
 @import 'sass/helpers/_variables.scss';
 @font-face {
+    font-family: 'LibreBaskerville-Bold';
+    src: url('../assets/fonts/LibreBaskerville/LibreBaskerville-Bold.ttf') format('truetype');
+}
+@font-face {
     font-family: 'LibreBaskerville-Regular';
     src: url('../assets/fonts/LibreBaskerville/LibreBaskerville-Regular.ttf') format('truetype');
 }
 @font-face {
     font-family: 'Poppins-Medium';
     src: url('../assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('../assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
 }
 // @include font-face('Poppins-Medium','../assets/fonts/Poppins/Poppins-Medium.ttf');
 html {
@@ -141,5 +149,68 @@ body {
         &__title-container {
             @include width-height(26%);
         }
+    }
+}
+// ABOUT
+.about {
+    @include width-height(100%);
+    background-color: $color_1;
+    margin: 1em 0;
+    padding: 3em 0;
+    display: grid;
+    &__container {
+        @include width-height(100%);
+        max-width: 72em;
+        max-height: 44em;
+    }
+    &__img-container {
+        @include width-height(90%, auto);//(35em, 44em);
+        @include linearGradient($color_10, $color_9);
+        border: 0.7em solid $color_10;
+        max-width: 35em;
+        max-height: 44em;
+        margin: 0 auto;
+    }
+    &__img {
+        @include width-height(100%, auto);//(35em, 44em);
+    }
+    &__body {
+        @include width-height(90%, auto);//(31em, 35em);
+        margin: 1em auto;
+        padding: 1em;
+        background-color: $color_1;
+        box-shadow:  0.3em -0.3em 0.5em 0.05em $color_10;
+        position: relative;
+        max-width: 31em;
+        max-height: 35em;
+    }
+    &__body:after {
+        background: linear-gradient(to right, $color_13 25%, $color_14 25%, $color_14 50%, $color_15 50%, $color_15 75%, $color_8 75%);
+        position: absolute;
+        content: '';
+        height: 4px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+      }
+    &__title {
+        font: bold 2.15em LibreBaskerville-Bold;
+        color: $color_2;
+        text-align: center;
+    }
+    &__text {
+        font: normal 0.8em Poppins-Regular;
+        text-align: left;
+    }
+    @media #{$media-type_1} and (min-width: $screen-sm) {
+        &__body {
+            // @include width-height(90%, auto);//(41em, 35em);
+            position: relative;
+            bottom: 500;
+            margin-right: 0;
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-lg) {
+        padding: 7em 0;
     }
 }
