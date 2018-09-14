@@ -586,7 +586,19 @@ body {
       max-height: 24em; } }
   @media screen and (min-width: 992px) {
     .about__container {
-      margin: 4em 0; } }
+      display: grid;
+      grid-template-columns: repeat(7, [col] 1fr);
+      grid-template-rows: 1fr;
+      margin: 5em 0; }
+    .about__img-container {
+      grid-column: col 3 / span  3;
+      grid-row: 1; }
+    .about__body {
+      grid-column: col 5 / span 3;
+      grid-row: 1;
+      z-index: 20;
+      margin: auto 0;
+      max-height: 24em; } }
   @media screen and (min-width: 1200px) {
     .about__container {
       margin: 7em 0; } }
