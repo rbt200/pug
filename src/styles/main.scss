@@ -154,14 +154,10 @@ body {
 // ABOUT
 .about {
     @include width-height(100%);
-    background-color: $color_1;
-    margin: 1em 0;
-    padding: 3em 0;
-    display: grid;
     &__container {
         @include width-height(100%);
         max-width: 72em;
-        max-height: 44em;
+        margin: 2em 0;
     }
     &__img-container {
         @include width-height(90%, auto);//(35em, 44em);
@@ -179,7 +175,7 @@ body {
         margin: 1em auto;
         padding: 1em;
         background-color: $color_1;
-        box-shadow:  0.3em -0.3em 0.5em 0.05em $color_10;
+        box-shadow:  0.3em -0.3em 0.5em 0.05em rgba($color: $color_10, $alpha: 0.5);
         position: relative;
         max-width: 31em;
         max-height: 35em;
@@ -203,14 +199,113 @@ body {
         text-align: left;
     }
     @media #{$media-type_1} and (min-width: $screen-sm) {
-        &__body {
-            // @include width-height(90%, auto);//(41em, 35em);
-            position: relative;
-            bottom: 500;
-            margin-right: 0;
+        &__container {
+            display: grid;
+            grid-template-columns: repeat(5, [col] 20% );
+            grid-template-rows: 1fr;
         }
+        &__img-container {
+            grid-column: col 2 / span  3;
+            grid-row: 1;
+        }
+        &__body {
+            grid-column: col 3 / span 3;
+            grid-row: 1;
+            z-index: 20;
+            max-height: 28em;
+            margin: auto 0;
+        }   
+    }
+    @media #{$media-type_1} and (min-width: $screen-md) {
+        &__container {
+            margin: 3em 0;
+        }
+        &__body {
+            max-height: 24em;
+        }  
     }
     @media #{$media-type_1} and (min-width: $screen-lg) {
-        padding: 7em 0;
+        &__container {
+            margin: 4em 0;
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-xl) {
+        &__container {
+            margin: 7em 0;
+        }
     }
 }
+
+
+// ABOUT
+// .about {
+//     @include width-height(100%);//, 65em);
+//     background-color: $color_1;
+//     margin: 1em 0;
+//     padding: 3em 0;
+//     &__container {
+//         @include width-height(100%, 44em);
+//         // max-width: 72em;
+//         // max-height: 44em;
+//     }
+//     &__img-container {
+//         @include width-height(90%, auto);//(35em, 44em);
+//         @include linearGradient($color_10, $color_9);
+//         border: 0.7em solid $color_10;
+//         // max-width: 35em;
+//         // max-height: 44em;
+//         margin: 0 auto;
+//     }
+//     &__img {
+//         @include width-height(100%, auto);//(35em, 44em);
+//     }
+//     &__body {
+//         @include width-height(90%, auto);//(31em, 35em);
+//         margin: 1em auto;
+//         padding: 1em;
+//         background-color: $color_1;
+//         box-shadow:  0.3em -0.3em 0.5em 0.05em rgba($color: $color_10, $alpha: 0.5);
+//         position: relative;
+//         // max-width: 31em;
+//         // max-height: 35em;
+//     }
+//     &__body:after {
+//         background: linear-gradient(to right, $color_13 25%, $color_14 25%, $color_14 50%, $color_15 50%, $color_15 75%, $color_8 75%);
+//         position: absolute;
+//         content: '';
+//         height: 4px;
+//         right: 0;
+//         left: 0;
+//         bottom: 0;
+//       }
+//     &__title {
+//         font: bold 2.15em LibreBaskerville-Bold;
+//         color: $color_2;
+//         text-align: center;
+//     }
+//     &__text {
+//         font: normal 0.8em Poppins-Regular;
+//         text-align: left;
+//     }
+//     @media #{$media-type_1} and (min-width: $screen-sm) {
+//         // @include width-height(90%, auto);
+//         // @include display-flex(column, nowrap, center, center, center);
+//         // &__container {
+//         //     max-height: 44em;
+//         // }
+//         // &__body {
+//         //     // @include width-height(90%, auto);//(41em, 35em);
+//         //     position: relative;
+//         //     bottom: 500;
+//         //     margin-right: 0;
+//         // }
+//     }
+//     @media #{$media-type_1} and (min-width: $screen-lg) {
+//         padding: 7em 0;
+//     }
+// }
+// // FOCUS
+// .focus {
+//     // @include width-height(100%, 20em);
+//     // @include display-flex(column, nowrap, center, center, center);
+// }
