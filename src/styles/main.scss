@@ -321,3 +321,115 @@ body {
         padding: 5em 0 8em;
     }
 }
+// VIDEO
+.portfolio {
+    @include width-height(100%, auto);
+    @include display-flex(column, nowrap, center, center, center);
+    padding-bottom: 3em;
+    &__title {
+        font: bold 3.2em LibreBaskerville-Bold;
+        color: $color_2;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    &__subtitle {
+        font: normal 1.2em LNewTimesRoman;
+        color: $color_11;
+        text-align: center;
+        margin-top: 0;
+    }
+    &__gallery {
+        height: auto;
+        @include display-flex(row, wrap, center, center);
+        max-width: 810px;        
+    }
+    &__gallery-item {
+        @include width-height(250px, 200px);
+        background: {
+            position: center;
+            size: cover;
+            repeat: no-repeat;
+        }
+        margin: 10px;
+        position: relative;
+        overflow: hidden;
+        box-shadow:  0.3em 0.3em 0.5em 0.05em rgba($color: $color_10, $alpha: 0.5);
+    }
+    &__gallery-item:hover  &__link-container {
+        top: 0;
+        left: 0;
+        transform: translateY(0em);
+        transition: transform 0.5s linear;
+    }
+    &__link-container {
+        @include width-height(250px, 200px);        
+        position: relative;
+        top: 200;
+        left: 0;
+        transform: translateY(10em);
+        transition: all 0.5s linear;
+    }
+    &__upper {
+        @include width-height(inherit, 70%);
+        @include display-flex(column, wrap, center, center);
+        background-color: $color_2;
+        opacity: 0.5;
+    }
+    &__upper::after {
+        background: linear-gradient(to right, #bcbcbc 25%,#ffcd02 25%, #ffcd02 50%, #e84f47 50%, #e84f47 75%, #65c1ac 75%);
+        position: absolute;
+        content: '';
+        height: 4px;
+        right: 0;
+        left: 0;
+        bottom: 3.5em;
+    }
+    &__lower {
+        @include width-height(inherit, 30%);
+        @include display-flex(column, wrap, center, center);
+        background-color: $color_1;
+    }
+    &__project-name {
+        margin: 0;
+        padding: 0;
+    }
+    &__icon-container {
+        @include width-height(45px, 45px);
+    }
+    &__upper-img {
+        @include width-height(inherit, inherit);
+    }
+    &__project-name {
+        font: normal 1em Poppins-Regular;
+    }
+    &__gallery-item_bg_0 {
+        background-image: url(../assets/img/img-portfolio-0.png);
+    }
+    &__gallery-item_bg_1 {
+        background-image: url(../assets/img/img-portfolio-1.png);
+    }
+    &__gallery-item_bg_2 {
+        background-image: url(../assets/img/img-portfolio-2.png);
+    }
+    &__gallery-item_bg_3 {
+        background-image: url(../assets/img/img-portfolio-3.png);
+    }
+    &__gallery-item_bg_4 {
+        background-image: url(../assets/img/img-portfolio-4.png);
+    }
+    &__gallery-item_bg_5 {
+        background-image: url(../assets/img/img-portfolio-5.png);
+    }
+    &__gallery-item_bg_6 {
+        background-image: url(../assets/img/img-portfolio-6.png);
+    }
+    &__gallery-item_bg_7 {
+        background-image: url(../assets/img/img-portfolio-7.png);
+    }
+    &__gallery-item_bg_8 {
+        background-image: url(../assets/img/img-portfolio-8.png);
+    }
+    @media #{$media-type_1} and (min-width: $screen-lg) {
+      padding-bottom: 6em;
+    }
+}

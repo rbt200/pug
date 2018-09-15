@@ -61,6 +61,20 @@ html
                             img(src="./assets/img/icon-services-mobile.png")
                             p.focus__content-title App Development
                             p.focus__content-text Analytics release series A financing launch party interaction design android angel investor.
+            .portfolio
+                .portfolio__header
+                    p.portfolio__title Portfolio
+                    p.portfolio__subtitle We understand your requirement and provide quality works.
+                .portfolio__gallery
+                    each item in [0,1,2,3,4,5,6,7,8]
+                        div(class="portfolio__gallery-item portfolio__gallery-item_bg_" + item + "")
+                            .portfolio__link-container
+                                .portfolio__upper
+                                    .portfolio__icon-container
+                                        a(class="portfolio__link", href="", title="Item page")
+                                            img(class="portfolio__upper-img" src="./assets/img/icon-portfolio-circle.png")
+                                .portfolio__lower
+                                    p.portfolio__project-name Project #{item}
 
 
 
