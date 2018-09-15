@@ -6,73 +6,58 @@ html
         link(rel="stylesheet", href="./styles/style.css")
         title="Alexis"
     body
-        div.wrapper
+        .wrapper
             header.header
-                div.header__logo-container
+                .header__logo-container
                     img.header__logo(src="./assets/img/img-header-logo.png")
                 nav.header__nav
                     ul.header__nav-ul
-                        li.header__nav-li
-                            a(class="header__nav-link advert__button_animated_true", href="#about", title="About Us") About Us
-                        li.header__nav-li
-                            a.header__nav-link(href="#about", title="About Us") Our Focus
-                        li.header__nav-li
-                            a.header__nav-link(href="#about", title="About Us") Portfolio
-                        li.header__nav-li
-                            a.header__nav-link(href="#about", title="About Us") Our Team
-                        li.header__nav-li
-                            a.header__nav-link(href="#about", title="About Us") Work Space
-                        li.header__nav-li
-                            a.header__nav-link(href="#about", title="About Us") Pricing
-                        li.header__nav-li
-                            a.header__nav-link(href="#about", title="About Us") Testimonials
-                        li.header__nav-li
-                            a.header__nav-link(href="#about", title="About Us") Blog
-                        li.header__nav-li
-                            a.header__nav-link(href="#about", title="About Us") Contact  
-            div.advert
-                div.advert__header
-                    div.advert__title-container
+                        each val in ["Our Focus", "Portfolio", "Our Team", "Work Space", "Pricing", "Testimonials", "Blog", "Contact"]
+                            li.header__nav-li
+                                a(class="header__nav-link", href=val, title="About Us")= val
+            .advert
+                .advert__header
+                    .advert__title-container
                         p.advert__title We design things with love and passion.
                     input(class="advert__button advert__button_animated_true", type="button", value="Our Works")
-                div.advert__body
-                    div.advert__content
+                .advert__body
+                    .advert__content
                         img.advert__content-icon(src="./assets/img/icon-header-dollar.png")
                         p.advert__text(class="advert__content_color_green") FIXED PRICES PROJECTS
-                    div.advert__content
+                    .advert__content
                         img.advert__content-icon(src="./assets/img/icon-header-clock.png")
                         p.advert__text(class="advert__content_color_violet") RECEIVE ON TIME
-                    div.advert__content
+                    .advert__content
                         img.advert__content-icon(src="./assets/img/icon-header-tick.png")
                         p.advert__text(class="advert__content_color_orange") SATISFACTION GUARENTEED
-            div.about
-                div.about__container
-                    div.about__img-container
+            .about
+                .about__container
+                    .about__img-container
                         img.about__img(src="./assets/img/img-about-blank.png", alt="About")
-                    div.about__body
+                    .about__body
                         p.about__title About Us.
                         p.about__text Analytics release series A financing launch party interaction design android angel investor. Vesting period social media sales conversion launch party rockstar incubator customer social proof graphical user interface technology supply chain. Non-disclosure agreement rockstar creative partner network launch party social proof paradigm shift long tail influencer. 
                         p.about__text Monetization validation success. Seed round channels product management. Customer non-disclosure agreement strategy android growth hacking ramen buyer.
-            div.focus
-                div.focus__header
+            .focus
+                .focus__header
                     p.focus__title Our Focus
                     p.focus__subtitle We understand your requirement and provide quality works.
-                div.focus__body
-                    div.focus__subcontainer
-                        div(class="focus__content-border_color_red focus__content")
+                .focus__body
+                    .focus__subcontainer
+                        .focus__content-border_color_red.focus__content
                             img(src="./assets/img/icon-services-envelope.png")
                             p.focus__content-title Web Design
                             p.focus__content-text Analytics release series A financing launch party interaction design android angel investor.
-                        div.focus__content(class="focus__content-border_color_green")
+                        .focus__content.focus__content-border_color_green
                             img(src="./assets/img/icon-services-paper.png")
                             p.focus__content-title UX Design
                             p.focus__content-text Analytics release series A financing launch party interaction design android angel investor.
-                    div.focus__subcontainer
-                        div.focus__content(class="focus__content-border_color_violet")
+                    .focus__subcontainer
+                        .focus__content.focus__content-border_color_violet
                             img(src="./assets/img/icon-services-mountains.png")
                             p.focus__content-title Photograph
                             p.focus__content-text Analytics release series A financing launch party interaction design android angel investor.
-                        div.focus__content(class="focus__content-border_color_orange")
+                        .focus__content.focus__content-border_color_orange
                             img(src="./assets/img/icon-services-mobile.png")
                             p.focus__content-title App Development
                             p.focus__content-text Analytics release series A financing launch party interaction design android angel investor.
