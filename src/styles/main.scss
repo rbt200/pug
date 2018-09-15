@@ -249,77 +249,75 @@ body {
         }
     }
 }
-
-
-// ABOUT
-// .about {
-//     @include width-height(100%);//, 65em);
-//     background-color: $color_1;
-//     margin: 1em 0;
-//     padding: 3em 0;
-//     &__container {
-//         @include width-height(100%, 44em);
-//         // max-width: 72em;
-//         // max-height: 44em;
-//     }
-//     &__img-container {
-//         @include width-height(90%, auto);//(35em, 44em);
-//         @include linearGradient($color_10, $color_9);
-//         border: 0.7em solid $color_10;
-//         // max-width: 35em;
-//         // max-height: 44em;
-//         margin: 0 auto;
-//     }
-//     &__img {
-//         @include width-height(100%, auto);//(35em, 44em);
-//     }
-//     &__body {
-//         @include width-height(90%, auto);//(31em, 35em);
-//         margin: 1em auto;
-//         padding: 1em;
-//         background-color: $color_1;
-//         box-shadow:  0.3em -0.3em 0.5em 0.05em rgba($color: $color_10, $alpha: 0.5);
-//         position: relative;
-//         // max-width: 31em;
-//         // max-height: 35em;
-//     }
-//     &__body:after {
-//         background: linear-gradient(to right, $color_13 25%, $color_14 25%, $color_14 50%, $color_15 50%, $color_15 75%, $color_8 75%);
-//         position: absolute;
-//         content: '';
-//         height: 4px;
-//         right: 0;
-//         left: 0;
-//         bottom: 0;
-//       }
-//     &__title {
-//         font: bold 2.15em LibreBaskerville-Bold;
-//         color: $color_2;
-//         text-align: center;
-//     }
-//     &__text {
-//         font: normal 0.8em Poppins-Regular;
-//         text-align: left;
-//     }
-//     @media #{$media-type_1} and (min-width: $screen-sm) {
-//         // @include width-height(90%, auto);
-//         // @include display-flex(column, nowrap, center, center, center);
-//         // &__container {
-//         //     max-height: 44em;
-//         // }
-//         // &__body {
-//         //     // @include width-height(90%, auto);//(41em, 35em);
-//         //     position: relative;
-//         //     bottom: 500;
-//         //     margin-right: 0;
-//         // }
-//     }
-//     @media #{$media-type_1} and (min-width: $screen-lg) {
-//         padding: 7em 0;
-//     }
-// }
-// // FOCUS
-// .focus {
-//     // @include width-height(100%, 20em);
-//     // @include display-flex(column, nowrap, center, center, center);
-// }
+// FOCUS
+.focus {
+    @include width-height(100%, auto);
+    @include display-flex(column, nowrap, center, center, center);
+    background-color: $color_17;
+    padding: 2em 0 5em;
+    &__header {
+        @include width-height(100%);
+        @include display-flex(column, nowrap, center, center, center);
+    }
+    &__title {
+        font: bold 2.2em LibreBaskerville-Bold;
+        color: $color_2;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    &__subtitle {
+        font: normal 1.2em TimesNewRoman;
+        color: $color_11;
+        text-align: center;
+    }
+    &__body {
+        @include width-height(100%, auto);
+        @include display-flex(row, wrap, center, center, center);
+    }
+    &__subcontainer {
+        @include width-height(auto, auto);
+        @include display-flex(row, wrap, center, center, center);
+    }
+    &__content {
+        @include width-height(15em, 20em);//(16em, 22em);
+        @include display-flex(column, nowrap, center, center, center);
+        margin: 0.5em;
+        background-color: $color_1;
+        position: relative;
+    }
+    &__content-title {
+        font: normal 1.3em Poppins-Medium;
+        color: $color_16;
+        text-align: center;
+    }
+    &__content-text {
+        font: normal 1em Poppins-Regular;
+        color: $color_11;
+        text-align: center;
+    }
+    &__content-img_theme_0 {
+        src: url(../assets/img/icon-services-envelope.png);
+    }
+    &__content-border_color_green::after {
+        @include pseudoBottomBorder();
+        background-color: $color_6;
+    }
+    &__content-border_color_red::after {
+        @include pseudoBottomBorder();
+        background-color: $color_4;
+    }
+    &__content-border_color_violet::after {
+        @include pseudoBottomBorder();
+        background-color: $color_7;
+    }
+    &__content-border_color_orange::after {
+        @include pseudoBottomBorder();
+        background-color: $color_8;
+    }
+    @media #{$media-type_1} and (min-width: $screen-lg) {
+        padding: 3em 0 6em;
+    }
+    @media #{$media-type_1} and (min-width: $screen-xl) {
+        padding: 5em 0 8em;
+    }
+}
