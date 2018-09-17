@@ -82,7 +82,7 @@ gulp.task('clean', function() {
     return del.sync('build'); // Delete folder before building
 });
 
-gulp.task('watch', ['sass', 'pug', 'autoprefixer', 'html', 'image', 'font', 'js', 'browserSync'], function () {
+gulp.task('watch', ['sass', 'pug', 'html', 'image', 'font', 'js', 'browserSync'], function () {
     gulp.watch('./src/**/*.scss', ['sass']);
     gulp.watch('.src/**/*.scss', ['autoprefixer']);
     gulp.watch('./src/img/*', ['image']);

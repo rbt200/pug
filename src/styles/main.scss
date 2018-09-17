@@ -279,7 +279,7 @@ body {
         @include display-flex(row, wrap, center, center, center);
     }
     &__content {
-        @include width-height(15em, 20em);//(16em, 22em);
+        @include width-height(15em, 20em);
         @include display-flex(column, nowrap, center, center, center);
         margin: 0.5em;
         background-color: $color_1;
@@ -431,5 +431,150 @@ body {
     }
     @media #{$media-type_1} and (min-width: $screen-lg) {
       padding-bottom: 6em;
+    }
+}
+// TEAM
+.team {
+    @include width-height(100%);
+    @include display-flex(column, nowrap, center, center);
+    padding: 2em 0;
+    background-color: $color_17;
+    &__header {
+        @include width-height(100%);
+        @include display-flex(column, nowrap, center, center);
+    }
+    &__header-title {
+        font: bold 1.6em LibreBaskerville-Bold;
+        color: $color_2;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    &__header-subtitle {
+        font: normal 1em LNewTimesRoman;
+        color: $color_11;
+        text-align: center;
+        margin-top: 0;
+    }
+    &__body {
+        @include width-height(100%);
+        @include display-flex(row, wrap, center, center);
+    }
+    &__subcontainer {
+        @include width-height(auto, auto);
+        @include display-flex(row, wrap, center, center, center);
+    }
+    &__body-container {
+        height: auto;
+        @include display-flex(row, wrap, center, center);
+    }
+    &__content-container {        
+        @include width-height(100%, auto);
+        @include display-flex(column, wrap, center, center, center);
+        background: {
+            position: center;
+            size: cover;
+            repeat: no-repeat;
+        }
+        margin: 10px;
+        background-color: $color_1;
+        max-width: 17em;
+        max-height: 22em;
+        position: relative;
+    }
+    %background-img {
+        @include width-height(16em, 16em);
+        margin: 0.5em;
+    }
+    &__content-img_bg_0 {
+        @extend %background-img;
+        background-image: url(../assets/img/bg-team-0.png);
+        @include borderBottomColor($color_4);    
+    }
+    &__content-img_bg_1 {
+        @extend %background-img;
+        background-image: url(../assets/img/bg-team-1.png);
+        @include borderBottomColor($color_6);
+    }
+    &__content-img_bg_2 {
+        @extend %background-img;
+        background-image: url(../assets/img/bg-team-2.png);
+        @include borderBottomColor($color_7);
+    }
+    &__content-img_bg_3 {
+        @extend %background-img;
+        background-image: url(../assets/img/bg-team-3.png);
+        @include borderBottomColor($color_8);
+    }
+    &__content-bio {
+        @include width-height(80%);
+        @include display-flex(column, wrap, center, center, center);
+    }
+    &__content-name {
+        margin-bottom: 0;
+        font: medium 1.25em Poppins-Medium;
+        color: $color_2;
+    }
+    &__content-position {
+        margin-top: 0.5em;
+        font: normal 0.8em Poppins-Regular;
+        color: $color_11;
+    }
+    &__member {
+        @include width-height(90%, auto);
+        @include display-flex(column, wrap, center, center, center);
+        background-color: $color_1;
+        position: absolute;
+        display: none;
+        z-index: 2;
+        top: 16em;
+    }
+    &__member::before {
+        content: ''; 
+        position: absolute; /* Абсолютное позиционирование */
+        left: 20px;  /* Положение треугольника */
+        top: -20;
+        border: 10px solid transparent; /* Прозрачные границы */
+        border-bottom: 10px solid green; /* Добавляем треугольник */
+       }
+    &__member-content {
+        @include width-height(90%, auto);
+        @include display-flex(column, wrap, center, center, center);
+        background-color: $color_1;
+    }
+    &__member-text {
+        @include width-height(90%, auto);
+        @include display-flex(column, wrap, center, center, center);
+        background-color: $color_1;
+    }
+    &__member-social {
+        @include width-height(90%, auto);
+        @include display-flex(row, nowrap, center, center, center);
+        padding: 1em;
+    }
+    &__social-logo {
+        @include width-height(50%, auto);
+        @include display-flex(row, nowrap, flex-end, center,  center);
+        padding: 1em;
+    }
+    &__social-icons {
+        @include width-height(50%, auto);
+        @include display-flex(column, nowrap, center, flex-start, center);
+        border-left: solid 0.1em $color_15;
+        padding-left: 0.5em;
+    }
+    &__social-link {
+        text-decoration: none;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &_display_true {
+        display: flex;
+    }
+    &_display_false {
+        display: none;
+    }
+    @media #{$media-type_1} and (min-width: $screen-lg) {
+        padding: 4em 0 6em;
     }
 }

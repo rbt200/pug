@@ -75,7 +75,54 @@ html
                                             img(class="portfolio__upper-img" src="./assets/img/icon-portfolio-circle.png")
                                 .portfolio__lower
                                     p.portfolio__project-name Project #{item + 1}
-
+            .team
+                .team__header
+                    p.team__header-title Our Team
+                    p.team__header-subtitle We understand your requirement and provide quality works.
+                .team__body
+                    .team__body-container
+                        - var names = ['Michel Schmitt', 'David Kramer', 'Anna Schreder', 'David Noeman']
+                        - var positions = ['Founder & SEO', 'Lead Developer', 'Consaltent', 'Designer']
+                        - var container = 0;
+                        - var content = 0;                                                    
+                        .team__subcontainer                        
+                            .team__content-container
+                                .team__content-img_bg_0.team__target
+                                .team__content-bio
+                                    p.team__content-name Michel Schmidt
+                                    p.team__content-position Founder & SEO
+                            .team__content-container
+                                .team__content-img_bg_1.team__target
+                                .team__content-bio
+                                    p.team__content-name David Kramer
+                                    p.team__content-position Lead Developer
+                        .team__subcontainer
+                            .team__content-container
+                                .team__content-img_bg_2.team__target
+                                .team__content-bio
+                                    p.team__content-name Anna Schreder
+                                    p.team__content-position Consaltent
+                            .team__content-container
+                                .team__content-img_bg_3.team__target
+                                .team__content-bio
+                                    p.team__content-name David Noeman
+                                    p.team__content-position Designer
+                .team__member                    
+                    .team__member-content
+                        p.team__member-name  Michel Schmidt
+                        p.team__member-info Monetization first mover advantage iPad. Interaction design buzz handshake. Stealth agile development branding. Backing facebook hackathon conversion startup scrum project niche market business-to-consumer paradigm shift traction. Rockstar bandwidth twitter ownership success disruptive series A financing user experience buyer client social proof validation hypotheses. User experience crowdfunding facebook seed round A/B testing mass market. 
+                    .team__member-social
+                        .team__social-logo
+                            img(src="./assets/img/icon-team-share.png", alt="Share Icon ")
+                        .team__social-icons
+                            a.team__social-link(href="", title="")
+                                img(src="./assets/img/icon-team-0.png", alt="Instagram")
+                            a.team__social-link(href="", title="")
+                                img(src="./assets/img/icon-team-1.png", alt="Tweeter")
+                            a.team__social-link(href="", title="")
+                                img(src="./assets/img/icon-team-2.png", alt="Facebook")
+                            a.team__social-link(href="", title="")       
+                                img(src="./assets/img/icon-team-3.png", alt="Linked")  
 
 
         

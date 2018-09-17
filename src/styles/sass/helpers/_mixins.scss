@@ -96,3 +96,14 @@
     left: 0;
     bottom: 0;    
 }
+@mixin borderBottomColor($color) {        
+    &::after {
+        background-color: $color;
+        position: absolute;
+        content: '';
+        height: 4px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+}
