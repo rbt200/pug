@@ -333,7 +333,7 @@ body {
         margin-bottom: 0;
     }
     &__subtitle {
-        font: normal 1.2em LNewTimesRoman;
+        font: normal 1.2em NewTimesRoman;
         color: $color_11;
         text-align: center;
         margin-top: 0;
@@ -450,7 +450,7 @@ body {
         margin-bottom: 0;
     }
     &__header-subtitle {
-        font: normal 1em LNewTimesRoman;
+        font: normal 1em NewTimesRoman;
         color: $color_11;
         text-align: center;
         margin-top: 0;
@@ -519,33 +519,41 @@ body {
         font: normal 0.8em Poppins-Regular;
         color: $color_11;
     }
+    &__target:hover {
+        cursor: pointer;
+    }
     &__member {
         @include width-height(90%, auto);
         @include display-flex(column, wrap, center, center, center);
         background-color: $color_1;
         position: absolute;
-        display: none;
         z-index: 2;
         top: 16em;
     }
     &__member::before {
         content: ''; 
-        position: absolute; /* Абсолютное позиционирование */
-        left: 20px;  /* Положение треугольника */
+        position: absolute;
+        left: 20px;
         top: -20;
-        border: 10px solid transparent; /* Прозрачные границы */
-        border-bottom: 10px solid green; /* Добавляем треугольник */
+        border: 10px solid transparent;
+        border-bottom: 10px solid $color_1;
        }
     &__member-content {
         @include width-height(90%, auto);
         @include display-flex(column, wrap, center, center, center);
         background-color: $color_1;
     }
+    &__member-name {
+        font: medium 1.3em Poppins-Medium;
+        color: $color_3;
+    }
     &__member-text {
         @include width-height(90%, auto);
         @include display-flex(column, wrap, center, center, center);
         background-color: $color_1;
-    }
+        font: medium 0.95em Poppins-Regular;
+        color: $color_18;
+    }    
     &__member-social {
         @include width-height(90%, auto);
         @include display-flex(row, nowrap, center, center, center);
@@ -574,7 +582,45 @@ body {
     &_display_false {
         display: none;
     }
-    @media #{$media-type_1} and (min-width: $screen-lg) {
-        padding: 4em 0 6em;
+    &__member_orientation_horizontal {
+        @include width-height(90%, 20em);
+        @include display-flex(row, wrap, center, center, center);
+        position: absolute;
+        z-index: 2;
+        top: 16em;
+    }
+    @media #{$media-type_1} and (min-width: $screen-xl) {
+        padding: 6em 0;
+        &__member {
+            @include display-flex(row, wrap, space-between, center, center);
+            width: 82%;
+            flex-flow: row;
+            // width: 82%;
+            // top: 23em;
+            // position: static;
+            width: 76%;
+            top: 0;
+            position: relative;
+            // width: 76%;
+            // top: 450%;
+            // position: absolute;
+        }
+        &__member:before {
+            content: '';
+            position: relative;
+            left: 3em;//130px;
+            top: -8em;//-130;
+            border: 10px solid transparent;
+            border-bottom: 10px solid green;
+        }
+        &__member-content {
+            @include width-height(70%, 15em);
+            @include display-flex(column, wrap, center, flex-start, center);
+            margin-left: 5em;
+        }
+        &__member-social {
+            @include width-height(30%);
+                margin-top: 2em;
+        }
     }
 }
