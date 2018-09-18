@@ -658,3 +658,95 @@ body {
         padding: 2em 0;
     }
 }
+// STEPS
+.steps {
+    @include width-height(100%);
+    @include display-flex(row, wrap, center, center, center);
+    color: $color_1;
+    padding: 3em 0 2em;
+    &__header {
+        @include width-height(100%);
+        @include display-flex(column, wrap, center, center, center);
+        margin: 2em 1em;
+    }
+    &__title {
+        font: bold 2em LibreBaskerville-Bold;
+        color: $color_2;
+        text-align: center;
+    }
+    &__subtitle {
+        font: normal 1em Poppins-Regular;
+        color: $color_11;
+        text-align: center;
+    }
+    &__body {
+        @include width-height(100%);
+        @include display-flex(column, wrap, center, center, center);
+        padding: 2em 0;
+    }
+    &__body-container {
+        @include width-height(100%, 78em);
+        @include display-flex(column, nowrap, start, center, center);
+        max-width: 34.75em;
+        background-image: url(../assets/img/bg-steps-0.png), url(../assets/img/bg-steps-1.png), url(../assets/img/bg-steps-2.png), url(../assets/img/bg-steps-3.png);
+        background-position: bottom 0em center, bottom 18em center, bottom 36em center, bottom 54em center;
+        background-repeat: no-repeat;
+        max-width: 80em;//34.75em;
+        
+    }
+    %body-item {
+        @include width-height(auto);
+        @include display-flex(row, nowrap, flex-start, start, center);
+        position: relative;
+        max-width: 33em;
+        max-height: 18em;
+        background-color: $color_1;
+        box-shadow: 0 0 40px rgba(0, 0, 0, .1) inset;
+    }
+    &__body-item-0 {
+        @extend %body-item;
+        @include borderBottomColor($color_8);        
+        align-self: flex-start;     
+    }    
+    &__body-item-1 {
+        @extend %body-item;
+        @include borderBottomColor($color_7);
+        align-self: flex-end;
+    }
+    &__body-item-2 {
+        @extend %body-item;
+        @include borderBottomColor($color_6);
+        align-self: flex-start;
+    }
+    &__body-item-3 {
+        @extend %body-item;
+        @include borderBottomColor($color_4);
+        align-self: flex-end;
+    }
+    &__img {
+        margin: 1em;
+    }
+    &__items-title {
+        font: normal 1.2em Poppins-Regular;
+        color: $color_3;
+        text-align: left;
+    }
+    &__items-text {
+        font: normal 0.8em Poppins-Regular;
+        color: $color_11;
+        text-align: left;
+    }
+    &__items-content {
+        padding: 1em 0.8em 0 0;
+    }
+    @media #{$media-type_1} and (min-width: 400px) {
+        &__items-content {
+            margin-top: 2em;
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-sm) {
+        &__items-content {
+            margin-top: 3em;
+        }
+    }
+}

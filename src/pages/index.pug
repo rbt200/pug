@@ -112,6 +112,21 @@ html
                             p.stats__quantity #{quantity[index]}                           
                             p.stats__text #{item}   
                             img.stats__button(src="./assets/img/icon-stats-bt-" + index + ".png", alt="")
+            .steps
+                .steps__header
+                    .steps__title Work Steps
+                    .steps__subtitle We understand your requirement and provide quality works.
+                .steps__body
+                    .steps__body-container
+                        each item, index in ["Project Understanding", "Research and Planning", "Wireframe and Design", "Development"]
+                            div(class="steps__body-item-" + index + "")
+                                .steps__item-img
+                                    img.steps__img(src="./assets/img/icon-steps-number-" + index + ".png")
+                                .steps__items-content
+                                    p.steps__items-title #{item}
+                                    p.steps__items-text Buyer strategy incubator niche market startup. Entrepreneur non disclosure agreement MVP traction beta social media investor accelerator.
+                            
+
 
 
         
