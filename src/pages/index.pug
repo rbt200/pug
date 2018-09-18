@@ -103,7 +103,15 @@ html
                                 .team__content-bio
                                     p.team__content-name David Noeman
                                     p.team__content-position Designer
-               
+            .stats
+                .stats__container
+                    - var quantity = ["1500+", "1000+", "1.796+", "12.458+"]
+                    each item, index in ["Freebies Realese", "Positive Feedbacks", "Satisfied Clients", "Projects Completed"]                                     
+                        .stats__item
+                            img.stats__icon(src="./assets/img/icon-stats-" + index + ".png", alt="")
+                            p.stats__quantity #{quantity[index]}                           
+                            p.stats__text #{item}   
+                            img.stats__button(src="./assets/img/icon-stats-bt-" + index + ".png", alt="")
 
 
         

@@ -475,7 +475,7 @@ body {
             size: cover;
             repeat: no-repeat;
         }
-        margin: 10px;
+        margin: 0.3em;
         background-color: $color_1;
         max-width: 17em;
         max-height: 22em;
@@ -622,5 +622,39 @@ body {
             @include width-height(30%);
                 margin-top: 2em;
         }
+    }
+}
+// STATS
+.stats {
+    @include width-height(100%, auto);// 29em);
+    @include display-flex(column, wrap, center, flex-start, center);
+    background: {
+        image: url(../assets/img/bg-stats-coffee.png);
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+    }
+    &__container {
+        @include width-height(100%);
+        @include display-flex(row, wrap, center, center, center);
+        padding: 1em 0;
+    }
+    &__item {
+        @include width-height(14em, 14em);
+        @include display-flex(column, nowrap, center, center, center);
+        margin: 1em 0;
+    }
+    &__quantity {
+        font: bold 0.85em Poppins-Medium;
+        color: $color_1;
+        margin-bottom: 0;
+    }
+    &__text {
+        font: normal 0.85em Poppins-Regular;
+        color: $color_1;
+        margin: 2em 0;
+    }
+    @media #{$media-type_1} and (min-width: $screen-xl) {
+        padding: 2em 0;
     }
 }

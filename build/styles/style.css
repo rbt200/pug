@@ -878,7 +878,7 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin: 10px;
+    margin: 0.3em;
     background-color: #fff;
     max-width: 17em;
     max-height: 22em;
@@ -1068,3 +1068,45 @@ body {
         width: 30%;
         height: inherit;
         margin-top: 2em; } }
+
+.stats {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: center;
+  background-image: url(../assets/img/bg-stats-coffee.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .stats__container {
+    width: 100%;
+    height: inherit;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 1em 0; }
+  .stats__item {
+    width: 14em;
+    height: 14em;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 1em 0; }
+  .stats__quantity {
+    font: bold 0.85em Poppins-Medium;
+    color: #fff;
+    margin-bottom: 0; }
+  .stats__text {
+    font: normal 0.85em Poppins-Regular;
+    color: #fff;
+    margin: 2em 0; }
+  @media screen and (min-width: 1200px) {
+    .stats {
+      padding: 2em 0; } }
