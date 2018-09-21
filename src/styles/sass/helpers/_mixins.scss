@@ -78,6 +78,29 @@
         color: $color_1;
     }
 }
+@mixin animateElement1($bg1, $bg2, $time:1s) {
+    transition: all $time linear;    
+    &:hover {
+        cursor: pointer;
+        background-color: $bg2;
+        color: $color_1;
+    }
+    &:active {
+        background-color: lighten($bg2, 10%);
+    }
+}
+@mixin animateElement2($time:1s) {
+    transition: all $time linear;    
+    &:hover {
+        padding:4em;
+    }
+}
+@mixin animateElement3($time:1s) {
+    transition: all $time linear;    
+    &:hover {
+        box-shadow: 0 0 40px rgba(0, 0, 0, .1) inset;
+    }
+}
 @mixin linearGradient($top, $bottom){
     background: $top; /* Old browsers */
     background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
@@ -96,7 +119,7 @@
     left: 0;
     bottom: 0;    
 }
-@mixin borderBottomColor($color) {        
+@mixin borderBottomColor($color, $bottom : 0, $top : 0) {        
     &::after {
         background-color: $color;
         position: absolute;
@@ -104,6 +127,25 @@
         height: 4px;
         right: 0;
         left: 0;
+        bottom: $bottom;
+        top: $top;
+    }
+    &:hover::after {
+        background-color: black;
+        top: null;
         bottom: 0;
     }
+}
+@mixin toggleBackground($c1, $c2) {
+    // @keyframes mouse-in {
+    //     0%   {background-color: $c1;}
+    //     100%  {background-color: $c2;}        
+    // }
+    // &__color_ + `#{$c1}`:hover {
+    //     cursor: pointer;
+    //     animation-name: mouse-in;
+    //     animation-duration: 1s;
+    //     background-color: $c2;
+        
+    // }
 }

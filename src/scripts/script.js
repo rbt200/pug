@@ -2,6 +2,8 @@ window.onload = function() {
     addListener('team__target', 'click', injectElement);
     document.body.addEventListener('click', removeMemberInfo);
     window.addEventListener('resize', getMediaSize);
+    // addListener('pricing__link', 'mouseover', paintPrice);
+    // addListener('pricing__link', 'mouseout', paintPrice);
 }
 const names = ['Michel Schmitt', 'David Kramer', 'Anna Schreder', 'David Noeman'];
 const descriptions = [
@@ -11,6 +13,27 @@ const descriptions = [
     'A financing user experience buyer . Interaction design buzz handshake. Stealth agile development branding. Backing facebook hackathon conversion startup scrum project niche market twitter ownership success disruptive series A financing user experience buyer client  business-to-consumer paradigm shift traction. Rockstar bandwidth crowdfunding facebook seed round A/B testing mass market social proof validathandshake.  MWonetization first mover advantage iPad. Interaction design buzz ion hypotheses. User experience . ',
 ]
 const positions = ['Founder & SEO', 'Lead Developer', 'Consaltent', 'Designer'];
+const paintPrice = function(event, action) {
+    // console.log(event);
+    const parent = event.target.parentNode;
+    const color = parent.classList[1].split('_')[4];
+    if(action === 'mouseover') {
+        event.target.animate([
+  // keyframes
+  { transform: 'translateY(0px)' }, 
+  { transform: 'translateY(-300px)' }
+], { 
+  // timing options
+  duration: 1000,
+  iterations: Infinity
+});
+
+    }
+    if(action === 'mouseout') {
+        event.target.style.backgroundColor = 'white';
+        event.target.style.color = color;
+    }
+}
 const getMediaSize = function(e) {
     const element = document.querySelector('.team__member');
     if(element) {

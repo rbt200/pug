@@ -125,7 +125,33 @@ html
                                 .steps__items-content
                                     p.steps__items-title #{item}
                                     p.steps__items-text Buyer strategy incubator niche market startup. Entrepreneur non disclosure agreement MVP traction beta social media investor accelerator.
-                            
+            .pricing
+                .pricing__header
+                    p.pricing__title Pricing Table
+                    p.pricing__subtitle We understand your requirement and provide quality works.
+                .pricing__body
+                    - const color = ['green', 'red', 'violet']
+                    - const capacity = ['200GB', '800GB', '200GB']
+                    - const files = ['20', 'Unlimited', '20']
+                    - const bandwidth = ['2TB', '10TB', '2TB']
+                    each item, index in ['Starter', 'Ultimate', 'Professional']
+                        div(class="pricing__plan pricing__plan_theme_" + color[index] + "")
+                            p.pricing__plan-name #{item}
+                            div(class="pricing__icon_theme_" + index + "")
+                            p.pricing__plan-text.pricing__plan-text_theme_bold #{capacity[index]}
+                                span.pricing__plan-text  Online Storage
+                            p.pricing__plan-text.pricing__plan-text_theme_bold #{files[index]}
+                                span.pricing__plan-text  Files Per Day
+                            p.pricing__plan-text.pricing__plan-text_theme_bold #{bandwidth[index]}
+                                span.pricing__plan-text  Monthly Bandwidth
+                            p.pricing__plan-text.pricing__plan-text_theme_bold &#10004;
+                                span.pricing__plan-text  Security Platform
+                            p.pricing__plan-text.pricing__plan-text_theme_bold &#10004;
+                                span.pricing__plan-text  24/7 Customer Support
+                            p.pricing__plan-text.pricing__plan-text_theme_bold &#10004;
+                                span.pricing__plan-text  Fast & Reliable
+                            a(class="pricing__link pricing_color_" + color[index] + "", href="", title=item) GET STARTED
+ 
 
 
 
